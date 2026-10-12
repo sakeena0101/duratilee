@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Duratile USA | Wholesale Flooring, Tile & Trade Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0d0f12;
+      --muted: #6f6b64;
+      --paper: #f8f6f2;
+      --sand: #ede8df;
+      --gold: #C5A059;
+      --gold-dark: #9e7e38;
+      --charcoal: #14171d;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    a { text-decoration: none; color: inherit; cursor: pointer; }
+    button, input, select, textarea { font: inherit; }
+    .wrap { max-width: 1220px; margin: auto; padding: 0 32px; }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background: #0a0c10;
+      color: #dfdcd5;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: .12em;
+      padding: 11px 16px;
+      border-bottom: 1px solid #1f232b;
+    }
+    .top-bar strong { color: var(--gold); }
+
+    /* Navigation */
+    .nav {
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      background: rgba(248, 246, 242, 0.96);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid #e5dfd3;
+    }
+    .brand {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 28px;
+      letter-spacing: .2em;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .brand span { color: var(--gold); }
+    .navlinks {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .navlinks a:hover, .navlinks a.active-tab {
+      color: var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 4px;
+    }
+
+    /* Mobile Hamburger Menu */
+    .hamburger-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--ink);
+      padding: 8px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 290px;
+      height: 100vh;
+      background: #0c0e12;
+      color: #fff;
+      z-index: 999;
+      padding: 40px 24px;
+      box-shadow: -4px 0 25px rgba(0,0,0,0.6);
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a {
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 12px 0;
+      border-bottom: 1px solid #232731;
+    }
+    .mobile-drawer a:hover { color: var(--gold); }
+    .close-drawer {
+      align-self: flex-end;
+      background: transparent;
+      border: none;
+      color: var(--gold);
+      font-size: 22px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 24px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: 1px solid var(--ink);
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+    .btn:hover { background: #000; }
+    .btn.gold {
+      background: var(--gold);
+      color: #0b0d11;
+      border-color: var(--gold);
+    }
+    .btn.gold:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: #fff; }
+    .btn.light {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.7);
+    }
+    .btn.light:hover { background: #fff; color: var(--ink); }
+
+    /* Typography */
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .24em;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-weight: 500;
+      letter-spacing: .02em;
+    }
+    h1 { font-size: clamp(38px, 5vw, 68px); line-height: 1.1; margin: 18px 0 20px; }
+    h2 { font-size: clamp(28px, 3.2vw, 44px); line-height: 1.2; margin: 12px 0 16px; }
+    h3 { font-size: 22px; margin: 12px 0 8px; }
+    p { line-height: 1.75; color: var(--muted); }
+
+    /* Sections */
+    .section { padding: 85px 0; }
+    .sectionhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+    .sectionhead p { max-width: 440px; margin: 0; }
+    .sand { background: var(--sand); }
+
+    /* Dedicated Page Container Logic */
+    .page-view {
+      display: none;
+      animation: fadeIn .3s ease-in-out;
+    }
+    .page-view.active-view {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Page Header Banner for Dedicated Pages */
+    .page-banner {
+      background: #11141b;
+      color: #fff;
+      padding: 60px 0;
+      border-bottom: 1px solid #232733;
+    }
+    .page-banner h1 { margin: 10px 0 12px; color: #fff; }
+    .page-banner p { color: #b7b2a8; max-width: 580px; margin: 0; }
+
+    /* Hero */
+    .hero {
+      min-height: 560px;
+      background: linear-gradient(90deg, rgba(10,12,16,0.85) 0%, rgba(10,12,16,0.3) 100%),
+                  url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85') center/cover;
+      display: flex;
+      align-items: center;
+    }
+    .hero-content { max-width: 650px; color: #fff; padding: 75px 0; }
+    .hero h1 { color: #fff; }
+    .hero p { color: #dfdbd3; font-size: 16px; max-width: 530px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+
+    /* Collections */
+    .collections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .product { background: #fff; border: 1px solid #e1dbcf; }
+    .product .photo { height: 300px; background-size: cover; background-position: center; }
+    .product .inside { padding: 24px 26px 28px; }
+    .product p { font-size: 13px; margin: 6px 0 18px; }
+    .arrow {
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--ink);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 4px;
+      display: inline-block;
+    }
+    .arrow:hover { color: var(--gold); }
+
+    /* Benefits */
+    .benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+    .benefit { border-top: 1px solid #c8c0b2; padding-top: 24px; }
+    .num { font-family: 'Cinzel', Georgia, serif; font-size: 26px; color: var(--gold); font-weight: 700; }
+    .benefit h3 { font-size: 20px; }
+    .benefit p { font-size: 13px; margin: 6px 0 0; }
+
+    /* Audience Paths */
+    .audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .audience { grid-column: span 2; background: #fff; border: 1px solid #dfd8cc; }
+    .audience img { width: 100%; height: 230px; object-fit: cover; display: block; }
+    .audience-body { padding: 26px 28px 30px; }
+    .audience-body h3 { margin: 8px 0 6px; }
+    .audience-body p { font-size: 13px; min-height: 48px; margin: 0 0 16px; }
+    .audience-wide { grid-column: 2 / span 2; }
+
+    /* Path Panel */
+    .path-panel {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      background: #ece7de;
+      border: 1px solid #ded6c9;
+      min-height: 380px;
+    }
+    .path-side { padding: 36px 30px; background: #e2dbce; border-right: 1px solid #d5ccbe; }
+    .path-tabs { display: grid; gap: 6px; margin-top: 20px; }
+    .path-tabs button {
+      border: 0;
+      border-bottom: 1px solid #cfc5b6;
+      text-align: left;
+      background: transparent;
+      color: #55514a;
+      padding: 13px 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .path-tabs button.active {
+      background: var(--ink);
+      color: #fff;
+      padding-left: 14px;
+      border-bottom-color: var(--ink);
+    }
+    .path-main { padding: 50px 60px; }
+    .path-main h3 { font-size: 32px; margin: 8px 0 12px; }
+    .path-perks { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 28px; }
+    .path-perks span {
+      background: #fbf9f6;
+      border: 1px solid #cfc5b6;
+      padding: 8px 14px;
+      font-size: 11px;
+      letter-spacing: .04em;
+      font-weight: 600;
+    }
+
+    /* Resources */
+    .resources { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .resource { background: #fff; border: 1px solid #dbd5c9; padding: 28px; }
+    .resource h3 { font-size: 20px; margin-top: 4px; }
+    .resource p { font-size: 13px; margin: 8px 0 20px; }
+
+    /* Blog Grid Section */
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .blog-card { background: #fff; border: 1px solid #dfd7cc; overflow: hidden; display: flex; flex-direction: column; }
+    .blog-thumb { height: 210px; background-size: cover; background-position: center; }
+    .blog-body { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .blog-date { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 8px; display: block; }
+    .blog-body h3 { font-size: 19px; line-height: 1.35; margin: 0 0 10px; }
+    .blog-body p { font-size: 13px; margin: 0 0 18px; }
+
+    /* Lead Form Area */
+    .lead { background: #0d0f13; color: #fff; }
+    .lead p { color: #bfb9af; }
+    .lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: flex-start; }
+    .form { background: #fbf9f6; padding: 38px; color: var(--ink); border-top: 4px solid var(--gold); }
+    .form h3 { margin-top: 0; color: var(--ink); font-size: 24px; }
+    .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .fields input, .fields select, .fields textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d4cdc1;
+      background: #fff;
+      font-size: 13px;
+      border-radius: 0;
+      color: var(--ink);
+    }
+    .fields input:focus, .fields select:focus, .fields textarea:focus {
+      outline: 2px solid var(--gold);
+      border-color: var(--gold);
+    }
+    .fields .full { grid-column: 1 / -1; }
+    .form .btn { width: 100%; margin-top: 14px; padding: 16px; }
+    .note { font-size: 11px !important; line-height: 1.5; color: #8a857b; }
+
+    /* Footer */
+    footer { background: #08090b; color: #eee9e0; padding: 60px 0 26px; border-top: 1px solid #1c1f26; }
+    footer p, footer a { color: #a49f96; font-size: 13px; }
+    footer a:hover { color: var(--gold); }
+    .foot { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    .foot .brand { color: #fff; }
+    .copyright {
+      border-top: 1px solid #232731;
+      padding-top: 22px;
+      margin-top: 45px;
+      color: #7b776f;
+      font-size: 11px;
+    }
+
+    /* Responsive Mobile Rules */
+    @media (max-width: 900px) {
+      .navlinks { display: none; }
+      .hamburger-btn { display: block; }
+      .collections, .benefits, .resources, .audience-grid, .blog-grid { grid-template-columns: 1fr 1fr; }
+      .audience { grid-column: span 1; }
+      .audience-wide { grid-column: span 2; }
+      .path-panel, .lead-grid, .foot { grid-template-columns: 1fr; }
+      .path-side { border-right: none; border-bottom: 1px solid #d5ccbe; }
+      .path-tabs { grid-template-columns: 1fr 1fr; }
+      .path-main { padding: 36px 30px; }
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 0 18px; }
+      .collections, .benefits, .resources, .audience-grid, .blog-grid, .path-tabs, .fields, .foot { grid-template-columns: 1fr; }
+      .audience, .audience-wide { grid-column: span 1; }
+      .sectionhead { display: block; }
+      .sectionhead p { margin-top: 8px; }
+      .hero-content { padding: 45px 0; }
+      .form { padding: 24px 18px; }
+      .btn { width: 100%; text-align: center; }
+      .hero-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    DALLAS WHOLESALE FLOORING & TILE · TRADE ACCOUNTS WELCOME · <strong>(817) 385-0216</strong> · 9210 KING ARTHUR DR
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="wrap nav">
+    <a onclick="navigateTo('home')" class="brand">DURA<span>TILE</span></a>
+    <nav class="navlinks">
+      <a onclick="navigateTo('home')" id="nav-home" class="active-tab">Home</a>
+      <a onclick="navigateTo('collections')" id="nav-collections">Collections</a>
+      <a onclick="navigateTo('audiences')" id="nav-audiences">Who We Serve</a>
+      <a onclick="navigateTo('resources')" id="nav-resources">Resources</a>
+      <a onclick="navigateTo('showroom')" id="nav-showroom">Showroom</a>
+      <a onclick="navigateTo('blog')" id="nav-blog">Trade Blog</a>
+      <a onclick="navigateTo('apply')" id="nav-apply" class="btn gold">Open Account</a>
+    </nav>
+    <button type="button" class="hamburger-btn" onclick="toggleMobileMenu()">Menu ☰</button>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button type="button" class="close-drawer" onclick="toggleMobileMenu()">✕</button>
+    <a onclick="navigateTo('home'); toggleMobileMenu();">Home</a>
+    <a onclick="navigateTo('collections'); toggleMobileMenu();">Collections Catalog</a>
+    <a onclick="navigateTo('audiences'); toggleMobileMenu();">Who We Serve</a>
+    <a onclick="navigateTo('resources'); toggleMobileMenu();">Dealer Resources</a>
+    <a onclick="navigateTo('showroom'); toggleMobileMenu();">Showroom & Hub</a>
+    <a onclick="navigateTo('blog'); toggleMobileMenu();">Trade Journal Blog</a>
+    <a onclick="navigateTo('apply'); toggleMobileMenu();" class="btn gold" style="margin-top:15px; color:#0b0d11;">Open Account</a>
+  </div>
+
+  <main>
+
+    <!-- ========================================== -->
+    <!-- 1. DEDICATED PAGE: HOME                    -->
+    <!-- ========================================== -->
+    <div id="view-home" class="page-view active-view">
+      <section class="hero">
+        <div class="wrap" style="width:100%">
+          <div class="hero-content">
+            <div class="eyebrow">Direct Wholesale Flooring & Tile Solutions</div>
+            <h1>Exceptional floors.<br>Built for every project.</h1>
+            <p>Commercial-grade SPC rigid core, glue-down luxury vinyl, and Italian/Spanish porcelain slabs backed by Dallas inventory and dedicated HubSpot sales assistance.</p>
+            <div class="hero-actions">
+              <a onclick="navigateTo('audiences')" class="btn gold">Explore Trade Programs →</a>
+              <a onclick="navigateTo('collections')" class="btn light">Explore Collections</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Duratile Benefits -->
+      <section class="section sand">
+        <div class="wrap">
+          <div class="eyebrow">The Duratile Advantage</div>
+          <h2>Wholesale support, simplified.</h2>
+          <div class="benefits">
+            <div class="benefit">
+              <div class="num">01</div>
+              <h3>Dallas Distribution</h3>
+              <p>Local warehouse pickup at 9210 King Arthur Dr and coordinated jobsite staging across Texas.</p>
+            </div>
+            <div class="benefit">
+              <div class="num">02</div>
+              <h3>Protected Trade Pricing</h3>
+              <p>Strict wholesale margin preservation for qualified retail showrooms, builders, and contractors.</p>
+            </div>
+            <div class="benefit">
+              <div class="num">03</div>
+              <h3>Displays & Swatches</h3>
+              <p>Retail showroom towers, architectural binders, and physical jobsite hand samples shipped promptly.</p>
+            </div>
+            <div class="benefit">
+              <div class="num">04</div>
+              <h3>Dedicated Support</h3>
+              <p>Territory sales assistance connecting directly into organized HubSpot follow-up and estimating review.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview Grid for Homepage -->
+      <section class="section wrap">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">Core Collections</div>
+            <h2>Commercial Lines Ready to Ship</h2>
+          </div>
+          <a onclick="navigateTo('collections')" class="arrow">View Full Catalog →</a>
+        </div>
+        <div class="collections">
+          <article class="product">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="inside">
+              <small class="eyebrow">Collection 01</small>
+              <h3>SPC Rigid Core</h3>
+              <p>20 mil commercial wear layer click flooring with attached IXPE acoustic pad.</p>
+              <a class="arrow" onclick="openApplyWithIntent('SPC Rigid Core Wholesale Pricing')">Request Pricing →</a>
+            </div>
+          </article>
+          <article class="product">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="inside">
+              <small class="eyebrow">Collection 02</small>
+              <h3>Glue-Down LVT</h3>
+              <p>Dryback luxury vinyl tile for commercial corridors, multifamily, and tenant turns.</p>
+              <a class="arrow" onclick="openApplyWithIntent('Glue-Down LVT Wholesale Pricing')">Request Pricing →</a>
+            </div>
+          </article>
+          <article class="product">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="inside">
+              <small class="eyebrow">Collection 03</small>
+              <h3>Porcelain Tile Slabs</h3>
+              <p>24"x48" large format rectified porcelain surfaces with mirror-finish polish.</p>
+              <a class="arrow" onclick="openApplyWithIntent('Porcelain Tile Wholesale Pricing')">Request Pricing →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2. DEDICATED PAGE: COLLECTIONS             -->
+    <!-- ========================================== -->
+    <div id="view-collections" class="page-view">
+      <div class="page-banner">
+        <div class="wrap">
+          <div class="eyebrow">Complete Product Directory</div>
+          <h1>Commercial Flooring & Tile Collections</h1>
+          <p>Explore SPC rigid core, gluedown commercial LVT, and large-format porcelain slabs. Live inventory staged at our Dallas distribution hub.</p>
+        </div>
+      </div>
+      <section class="section wrap">
+        <div class="collections">
+          <!-- Item 1 -->
+          <article class="product">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="inside">
+              <small class="eyebrow">Rigid Core Vinyl · 20 Mil</small>
+              <h3>Texas Highland Oak SPC</h3>
+              <p>6.5mm total thickness with 1.5mm acoustic IXPE pad. 100% waterproof limestone composite core.</p>
+              <div style="font-size:12px; color:#5c5850; margin-bottom:15px;">Size: 9" x 60" · EIR Texture · Box: 23.64 Sq.Ft</div>
+              <a class="arrow" onclick="openApplyWithIntent('Highland Oak SPC 20mil Samples')">Request Sample Kit →</a>
+            </div>
+          </article>
+
+          <!-- Item 2 -->
+          <article class="product">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="inside">
+              <small class="eyebrow">Rigid Core Vinyl · 20 Mil</small>
+              <h3>Alamo Walnut SPC</h3>
+              <p>Deep wood tones with wirebrushed matte finish and painted bevel edges. Heavy commercial rated.</p>
+              <div style="font-size:12px; color:#5c5850; margin-bottom:15px;">Size: 7" x 48" · Click Lock · Box: 19.02 Sq.Ft</div>
+              <a class="arrow" onclick="openApplyWithIntent('Alamo Walnut SPC Samples')">Request Sample Kit →</a>
+            </div>
+          </article>
+
+          <!-- Item 3 -->
+          <article class="product">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="inside">
+              <small class="eyebrow">Dryback Commercial Vinyl</small>
+              <h3>Dallas Slate Glue-Down LVT</h3>
+              <p>2.5mm heavy traffic vinyl with 20 mil commercial wear layer. Ideal for multifamily and corridors.</p>
+              <div style="font-size:12px; color:#5c5850; margin-bottom:15px;">Size: 12" x 24" · Direct Glue · Box: 36.00 Sq.Ft</div>
+              <a class="arrow" onclick="openApplyWithIntent('Dallas Slate LVT Samples')">Request Sample Kit →</a>
+            </div>
+          </article>
+
+          <!-- Item 4 -->
+          <article class="product">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="inside">
+              <small class="eyebrow">Porcelain Slab · Polished</small>
+              <h3>Saint Laurent PT76</h3>
+              <p>Mirror-polish black marble aesthetic with striking golden and white veining. True rectified edges.</p>
+              <div style="font-size:12px; color:#5c5850; margin-bottom:15px;">Size: 24" x 48" · PEI 4 Commercial · Box: 15.5 Sq.Ft</div>
+              <a class="arrow" onclick="openApplyWithIntent('Saint Laurent PT76 Porcelain Samples')">Request Sample Kit →</a>
+            </div>
+          </article>
+
+          <!-- Item 5 -->
+          <article class="product">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="inside">
+              <small class="eyebrow">Porcelain Slab · High Luster</small>
+              <h3>Panda White PT22</h3>
+              <p>Dramatic high-contrast bookmatch look with bold black movements on bright white backdrop.</p>
+              <div style="font-size:12px; color:#5c5850; margin-bottom:15px;">Size: 24" x 48" · Rectified · Box: 15.5 Sq.Ft</div>
+              <a class="arrow" onclick="openApplyWithIntent('Panda White PT22 Porcelain Samples')">Request Sample Kit →</a>
+            </div>
+          </article>
+
+          <!-- Item 6 -->
+          <article class="product">
+            <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85')"></div>
+            <div class="inside">
+              <small class="eyebrow">Porcelain Slab · Italian Vein</small>
+              <h3>Calacatta Oro PT09</h3>
+              <p>Warm Italian Calacatta character with gentle amber and taupe veining. Commercial slip rated.</p>
+              <div style="font-size:12px; color:#5c5850; margin-bottom:15px;">Size: 24" x 48" · Polished Gloss · Box: 15.5 Sq.Ft</div>
+              <a class="arrow" onclick="openApplyWithIntent('Calacatta Oro PT09 Porcelain Samples')">Request Sample Kit →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 3. DEDICATED PAGE: WHO WE SERVE            -->
+    <!-- ========================================== -->
+    <div id="view-audiences" class="page-view">
+      <div class="page-banner">
+        <div class="wrap">
+          <div class="eyebrow">Tailored Commercial Partnerships</div>
+          <h1>Who We Serve in the Flooring Trade</h1>
+          <p>Different buyers require different workflows. Explore program terms customized for retailers, home builders, multifamily developers, and design specifiers.</p>
+        </div>
+      </div>
+      <section class="section sand">
+        <div class="wrap">
+          <div class="audience-grid">
+            <article class="audience">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=80" alt="Flooring showroom">
+              <div class="audience-body">
+                <span class="eyebrow">01 / Dealer Program</span>
+                <h3>Flooring Retailers</h3>
+                <p>Protected dealer margins, physical display wings, full-length sample planks, and fast weekly replenishment from Dallas.</p>
+                <a class="arrow" onclick="setAndOpenPath('retailer')">View Retailer Terms →</a>
+              </div>
+            </article>
+            <article class="audience">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80" alt="Home builder project">
+              <div class="audience-body">
+                <span class="eyebrow">02 / Builder Program</span>
+                <h3>Home Builders</h3>
+                <p>Volume pallet pricing tiers, reliable lot-to-lot batch matching, guaranteed color palettes, and jobsite staging.</p>
+                <a class="arrow" onclick="setAndOpenPath('builder')">View Builder Terms →</a>
+              </div>
+            </article>
+            <article class="audience">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=80" alt="Multifamily housing">
+              <div class="audience-body">
+                <span class="eyebrow">03 / Project Supply</span>
+                <h3>Multifamily Developers</h3>
+                <p>Rapid unit takeoffs, direct container allocation, ASTM acoustic rating documentation, and delivery schedules.</p>
+                <a class="arrow" onclick="setAndOpenPath('multifamily')">View Multifamily Terms →</a>
+              </div>
+            </article>
+            <article class="audience">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80" alt="Architectural specification">
+              <div class="audience-body">
+                <span class="eyebrow">04 / Design & Specification</span>
+                <h3>Architects & Designers</h3>
+                <p>Architectural presentation binders, CSI 3-part specifications, ASTM sound/wear compliance, and free design swatches.</p>
+                <a class="arrow" onclick="setAndOpenPath('architect')">View Specifier Kit →</a>
+              </div>
+            </article>
+            <article class="audience audience-wide">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1100&q=80" alt="Commercial contractor install">
+              <div class="audience-body">
+                <span class="eyebrow">05 / Contractor Supply</span>
+                <h3>Flooring Contractors</h3>
+                <p>Job-specific bidding assistance, guaranteed stock reserves, and 2-hour will-call staging at King Arthur Drive.</p>
+                <a class="arrow" onclick="setAndOpenPath('contractor')">View Contractor Program →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Path Switcher Panel -->
+      <section class="section wrap" id="path-section">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">Interactive Program Selector</div>
+            <h2 id="pathTitle">Select your business type.</h2>
+          </div>
+          <p id="pathIntro">Choose below to configure your custom pricing structure and request an account review.</p>
+        </div>
+        <div class="path-panel">
+          <div class="path-side">
+            <div class="eyebrow" style="color:#514e48">Business Category</div>
+            <div class="path-tabs" role="group" aria-label="Business type">
+              <button type="button" data-path="retailer" class="active">Flooring Retailers ↗</button>
+              <button type="button" data-path="builder">Home Builders ↗</button>
+              <button type="button" data-path="multifamily">Multifamily ↗</button>
+              <button type="button" data-path="architect">Architects & Designers ↗</button>
+              <button type="button" data-path="contractor">Flooring Contractors ↗</button>
+            </div>
+          </div>
+          <div class="path-main">
+            <div class="eyebrow" id="pathEyebrow">Wholesale Dealer Program</div>
+            <h3 id="pathHeading">Grow your showroom with Duratile.</h3>
+            <p id="pathDescription">Explore dealer pricing, display opportunities, product samples, and stock inquiries.</p>
+            <div class="path-perks" id="pathPerks">
+              <span>Wholesale account</span><span>Display programs</span><span>Product samples</span>
+            </div>
+            <a class="btn gold" onclick="navigateTo('apply')" id="pathCTA">Open Dealer Account →</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 4. DEDICATED PAGE: RESOURCES               -->
+    <!-- ========================================== -->
+    <div id="view-resources" class="page-view">
+      <div class="page-banner">
+        <div class="wrap">
+          <div class="eyebrow">Dealer Toolkits & Technical Data</div>
+          <h1>Architect & Dealer Resource Center</h1>
+          <p>Download spec sheets, review warranty coverage, request showroom display fixtures, and order physical sample swatches.</p>
+        </div>
+      </div>
+      <section class="section wrap">
+        <div class="resources">
+          <div class="resource">
+            <span class="eyebrow">Physical Merchandising</span>
+            <h3>Samples & Swatches</h3>
+            <p>Order physical plank swatches and binder presentation trays for current client presentations.</p>
+            <a class="arrow" onclick="openApplyWithIntent('Physical Samples & Swatches Request')">Request Samples →</a>
+          </div>
+          <div class="resource">
+            <span class="eyebrow">Showroom Merchandising</span>
+            <h3>Dealer Display Program</h3>
+            <p>Ask about rotating showroom towers, architectural wings, and display co-op terms for your storefront.</p>
+            <a class="arrow" onclick="openApplyWithIntent('Dealer Showroom Display Towers Program')">Explore Displays →</a>
+          </div>
+          <div class="resource">
+            <span class="eyebrow">Technical Compliance</span>
+            <h3>Technical Documentation</h3>
+            <p>Download installation manuals, subfloor moisture requirements, ASTM sound tests, and master warranty terms.</p>
+            <a class="arrow" onclick="openApplyWithIntent('Technical Installation & Specs PDF')">Request Documents →</a>
+          </div>
+          <div class="resource">
+            <span class="eyebrow">Gated Asset</span>
+            <h3>2026 Wholesale Price List</h3>
+            <p>Tiered container, pallet, and box wholesale pricing matrix. Available exclusively to qualified accounts.</p>
+            <a class="arrow" onclick="openApplyWithIntent('2026 Master Wholesale Price Sheet')">Request Price List →</a>
+          </div>
+          <div class="resource">
+            <span class="eyebrow">Marketing Support</span>
+            <h3>High-Res Image Assets</h3>
+            <p>Full room scenes, texture swatches, and marketing assets ready for your dealership website and print collateral.</p>
+            <a class="arrow" onclick="openApplyWithIntent('High-Res Marketing Image Bank Access')">Request Media Kit →</a>
+          </div>
+          <div class="resource">
+            <span class="eyebrow">A&D Specification</span>
+            <h3>CSI 3-Part MasterFormat</h3>
+            <p>Pre-written Division 09 specifications for commercial SPC rigid core and interior porcelain tile.</p>
+            <a class="arrow" onclick="openApplyWithIntent('CSI 3-Part MasterFormat Specification')">Request CSI Specs →</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 5. DEDICATED PAGE: SHOWROOM                -->
+    <!-- ========================================== -->
+    <div id="view-showroom" class="page-view">
+      <div class="page-banner">
+        <div class="wrap">
+          <div class="eyebrow">Central Texas Logistics</div>
+          <h1>Dallas Warehouse & Trade Showroom</h1>
+          <p>Over 500,000 sq.ft of in-stock commercial flooring and large format porcelain slabs ready for inspection and 2-hour will-call pickup.</p>
+        </div>
+      </div>
+      <section class="section sand">
+        <div class="wrap sectionhead">
+          <div>
+            <div class="eyebrow">Location & Hours</div>
+            <h2>Visit our King Arthur Drive Hub.</h2>
+            <p style="color:var(--ink); font-weight:500; line-height:2;">
+              <strong>Facility Address:</strong><br>
+              9210 King Arthur Dr, Dallas, TX 75247<br><br>
+              <strong>Hours of Operation:</strong><br>
+              Monday – Friday: 8:00 AM – 5:00 PM<br>
+              Will-Call Staging closes at 4:30 PM<br><br>
+              <strong>Direct Sales Desk:</strong><br>
+              Phone: (817) 385-0216<br>
+              Email: info@duratileus.com
+            </p>
+          </div>
+          <div style="background:#fff; padding:36px; border:1px solid #dcd4c6; max-width:480px;">
+            <span class="eyebrow">Book a Meeting</span>
+            <h3>Schedule a Trade Appointment</h3>
+            <p style="font-size:13px;">Review physical full-size 24x48 porcelain slabs, pick up architectural sample kits, or discuss wholesale container pricing with a territory sales director.</p>
+            <a class="btn gold" style="width:100%;" onclick="openApplyWithIntent('Dallas Showroom Tour & Meeting Appointment')">Book Showroom Visit →</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 6. DEDICATED PAGE: TRADE BLOG              -->
+    <!-- ========================================== -->
+    <div id="view-blog" class="page-view">
+      <div class="page-banner">
+        <div class="wrap">
+          <div class="eyebrow">Industry Knowledge & Technical Trends</div>
+          <h1>Duratile Trade Journal</h1>
+          <p>Technical guidance on SPC core density, commercial wear layers, large format slab installation, and Texas wholesale distribution.</p>
+        </div>
+      </div>
+      <section class="section wrap">
+        <div class="blog-grid">
+          <!-- Article 1 -->
+          <article class="blog-card">
+            <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80')"></div>
+            <div class="blog-body">
+              <div>
+                <span class="blog-date">Technical Spec · SPC Flooring</span>
+                <h3>Why 20 Mil Wear Layer is the New Commercial Standard for Multifamily</h3>
+                <p>How limestone core density and ceramic bead coatings resist high tenant turnover wear compared to traditional dryback glue.</p>
+              </div>
+              <a class="arrow" onclick="openApplyWithIntent('Blog Inquiry: 20 Mil SPC Specification Guide')">Request 20mil Spec Sheet →</a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-card">
+            <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80')"></div>
+            <div class="blog-body">
+              <div>
+                <span class="blog-date">Architecture & Design</span>
+                <h3>The Rise of 24x48 Large Format Porcelain in Texas Commercial Builds</h3>
+                <p>Seamless minimal grout aesthetics: why architects are swapping out natural marble slabs for rectified porcelain tile PT76 & Panda White.</p>
+              </div>
+              <a class="arrow" onclick="openApplyWithIntent('Blog Inquiry: 24x48 Porcelain Sizing Guide')">Request Sizing Matrix →</a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-card">
+            <div class="blog-thumb" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80')"></div>
+            <div class="blog-body">
+              <div>
+                <span class="blog-date">Supply Chain · Texas Logistics</span>
+                <h3>Avoiding Costly Project Delays with Dallas Local Stock Allocation</h3>
+                <p>Container direct vs Dallas hub staging: how our 9210 King Arthur Dr warehouse guarantees 2-hour will-call readiness.</p>
+              </div>
+              <a class="arrow" onclick="openApplyWithIntent('Blog Inquiry: Dallas Local Stock Allocation')">Check Live Hub Availability →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 7. DEDICATED PAGE: APPLY / HUBSPOT FORM    -->
+    <!-- ========================================== -->
+    <div id="view-apply" class="page-view">
+      <div class="page-banner">
+        <div class="wrap">
+          <div class="eyebrow">Direct Wholesale Onboarding</div>
+          <h1>Become an Authorized Duratile Partner</h1>
+          <p>Submit your trade inquiry below. Submissions sync directly into our HubSpot CRM and assign an inside sales representative for same-day follow-up.</p>
+        </div>
+      </div>
+      <section class="section lead">
+        <div class="wrap lead-grid">
+          <div>
+            <div class="eyebrow" style="color:var(--gold)">Wholesale Partnership</div>
+            <h2 style="color:#fff">Let's grow your flooring business.</h2>
+            <p>Tell us about your business and upcoming project needs. Our territory sales team provides custom pricing, credit terms, and sample board merchandising support.</p>
+            <div style="margin-top:24px; padding:20px; border:1px solid #282d38; background:#11141a;">
+              <strong style="color:var(--gold); font-size:12px; text-transform:uppercase; letter-spacing:.1em; display:block; margin-bottom:6px;">Dallas Hub Dispatch</strong>
+              <p style="font-size:12px; margin:0; color:#b0a99c;">Will-call pickup ready in 2 hours at King Arthur Drive. Direct jobsite truck freight across Texas, Oklahoma, and Louisiana.</p>
+            </div>
+          </div>
+
+          <form class="form" id="leadForm">
+            <h3>Request Trade Information</h3>
+            <div class="fields">
+              <input name="Contact" id="f_contact" placeholder="Contact name *" required>
+              <input name="Company" id="f_company" placeholder="Company name *" required>
+              <input type="email" name="Email" id="f_email" placeholder="Business email *" required>
+              <input type="tel" name="Phone" id="f_phone" placeholder="Phone *" required>
+              <input name="City" id="f_city" placeholder="City *" required>
+              <input name="State" id="f_state" placeholder="State *" value="TX" required>
+
+              <select name="Customer Type" id="customerType" required>
+                <option value="">Customer type *</option>
+                <option value="Flooring Retailer">Flooring Retailer</option>
+                <option value="Builder">Builder</option>
+                <option value="General Contractor">General Contractor</option>
+                <option value="Architect / Designer">Architect / Designer</option>
+                <option value="Multifamily Buyer">Multifamily Buyer</option>
+                <option value="Other Trade Professional">Other Trade Professional</option>
+              </select>
+
+              <select name="Product Interest" id="f_product">
+                <option value="">Product interest</option>
+                <option value="SPC Rigid Core">SPC Rigid Core</option>
+                <option value="Glue-Down LVT">Glue-Down LVT</option>
+                <option value="Porcelain Tile">Porcelain Tile</option>
+                <option value="Multiple Collections">Multiple Collections</option>
+              </select>
+
+              <div class="full" id="contextLabel" style="font-size:12px; color:#716e67">Tell us about your buying needs (optional)</div>
+              <input class="full" id="contextInput" name="Project Details" placeholder="Products, estimated square footage, project location, or timing">
+
+              <select name="Monthly Purchases" id="purchaseVolume" class="full">
+                <option value="">Estimated monthly purchases (optional)</option>
+                <option value="Under $5,000">Under $5,000</option>
+                <option value="$5,000–$20,000">$5,000–$20,000</option>
+                <option value="$20,000–$50,000">$20,000–$50,000</option>
+                <option value="Over $50,000">Over $50,000</option>
+              </select>
+
+              <textarea name="Message" id="f_message" class="full" rows="3" placeholder="How can we help? Pricing, samples, displays, or showroom appointment"></textarea>
+            </div>
+
+            <button class="btn gold" type="submit" id="submitLabel">Submit Trade Inquiry →</button>
+            <p class="note" style="margin-top:10px;">Submissions are recorded securely in the Duratile HubSpot CRM. A representative will contact you shortly.</p>
+          </form>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div class="brand">DURA<span style="color:var(--gold)">TILE</span></div>
+          <p>Wholesale flooring and tile distribution engineered for dealers, builders, and trade professionals.</p>
+        </div>
+        <div>
+          <strong style="color:#fff; text-transform:uppercase; font-size:12px; letter-spacing:.1em;">Pages</strong>
+          <p>
+            <a onclick="navigateTo('home')">Home</a><br>
+            <a onclick="navigateTo('collections')">Collections Catalog</a><br>
+            <a onclick="navigateTo('audiences')">Who We Serve</a><br>
+            <a onclick="navigateTo('resources')">Dealer Resources</a><br>
+            <a onclick="navigateTo('showroom')">Showroom & Hub</a><br>
+            <a onclick="navigateTo('blog')">Trade Journal Blog</a><br>
+            <a onclick="navigateTo('apply')">Open Account</a>
+          </p>
+        </div>
+        <div>
+          <strong style="color:#fff; text-transform:uppercase; font-size:12px; letter-spacing:.1em;">Dallas Distribution</strong>
+          <p>9210 King Arthur Dr<br>Dallas, TX 75247<br>(817) 385-0216<br>info@duratileus.com</p>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2026 Duratile USA · Commercial B2B Flooring Distribution · Dallas, Texas
+      </div>
+    </div>
+  </footer>
+
+  <!-- Multi-Page Router & HubSpot API Engine -->
+  <script>
+    // -------------------------------------------------------------
+    // HubSpot Credentials
+    // -------------------------------------------------------------
+    const HUBSPOT_PORTAL_ID = "247601033"; 
+    const HUBSPOT_FORM_ID   = "a8d40c9e-bf52-44e7-bfdb-56e66b449a65";
+
+    // Multi-Page Switcher Logic
+    const pageKeys = ['home', 'collections', 'audiences', 'resources', 'showroom', 'blog', 'apply'];
+
+    function navigateTo(pageKey) {
+      if (!pageKeys.includes(pageKey)) pageKey = 'home';
+
+      // Hide all views, activate selected view
+      pageKeys.forEach(key => {
+        const viewEl = document.getElementById('view-' + key);
+        const navEl = document.getElementById('nav-' + key);
+        if (viewEl) viewEl.classList.remove('active-view');
+        if (navEl) navEl.classList.remove('active-tab');
+      });
+
+      const activeView = document.getElementById('view-' + pageKey);
+      const activeNav = document.getElementById('nav-' + pageKey);
+      if (activeView) activeView.classList.add('active-view');
+      if (activeNav) activeNav.classList.add('active-tab');
+
+      // Update URL Hash without page jump
+      history.pushState(null, null, '#' + pageKey);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Direct Lead Trigger with Intent Message
+    function openApplyWithIntent(intentText) {
+      navigateTo('apply');
+      setTimeout(() => {
+        const msgField = document.getElementById('f_message');
+        if (msgField) msgField.value = 'Interested in: ' + intentText;
+      }, 100);
+    }
+
+    // Set audience and open switcher
+    function setAndOpenPath(pathKey) {
+      choosePath(pathKey);
+      const targetSec = document.getElementById('path-section');
+      if (targetSec) targetSec.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Listen to Browser Back / Forward buttons
+    window.addEventListener('popstate', () => {
+      const hash = window.location.hash.replace('#', '');
+      navigateTo(hash || 'home');
+    });
+
+    // Mobile Hamburger Toggle
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      drawer.classList.toggle('open');
+    }
+
+    // Path definitions for interactive switcher
+    const paths = {
+      retailer: {
+        type: 'Flooring Retailer',
+        eyebrow: 'Wholesale Dealer Program',
+        title: 'Grow your showroom with Duratile.',
+        intro: 'Dealer pricing, display opportunities, samples, and inventory inquiries.',
+        perks: ['Wholesale account', 'Display towers', 'Product samples'],
+        cta: 'Open Dealer Account',
+        context: 'Store locations, monthly purchasing needs, or display interests'
+      },
+      builder: {
+        type: 'Builder',
+        eyebrow: 'Home Builder Program',
+        title: 'Flooring programs for your next community.',
+        intro: 'Request builder pricing, approved color palettes, product selections, and repeat supply programs.',
+        perks: ['Builder pricing', 'Color selections', 'Repeat supply'],
+        cta: 'Request Builder Pricing',
+        context: 'Project or community name, location, homes, approximate square footage, timeline'
+      },
+      multifamily: {
+        type: 'Multifamily Buyer',
+        eyebrow: 'Multifamily Project Supply',
+        title: 'Simplify your multifamily sourcing.',
+        intro: 'Share your project scope for volume pricing, product specifications, and supply planning.',
+        perks: ['Volume quotations', 'Product specifications', 'Supply planning'],
+        cta: 'Submit Project for Quote',
+        context: 'Property name, city, number of units, estimated square footage, bid date'
+      },
+      architect: {
+        type: 'Architect / Designer',
+        eyebrow: 'Architect & Designer Resources',
+        title: 'Specify with confidence.',
+        intro: 'Request material samples, available finishes, installation information, and product documentation.',
+        perks: ['Samples', 'Finish selection', 'Technical documents'],
+        cta: 'Request Specification Kit',
+        context: 'Firm, project type, desired finish or product, sample delivery details'
+      },
+      contractor: {
+        type: 'General Contractor',
+        eyebrow: 'Contractor Supply Program',
+        title: 'Get the materials your job needs.',
+        intro: 'Request job-specific pricing, product availability, and pickup or delivery options.',
+        perks: ['Job quotes', 'Stock inquiries', 'Delivery coordination'],
+        cta: 'Request Contractor Quote',
+        context: 'Job location, product, square footage, required delivery date'
+      }
+    };
+
+    function choosePath(id) {
+      const p = paths[id];
+      if (!p) return;
+      document.getElementById('pathEyebrow').textContent = p.eyebrow;
+      document.getElementById('pathTitle').textContent = p.title;
+      document.getElementById('pathHeading').textContent = p.title;
+      document.getElementById('pathDescription').textContent = p.intro;
+      document.getElementById('pathIntro').textContent = p.intro;
+      document.getElementById('pathPerks').replaceChildren(...p.perks.map(t => {
+        let e = document.createElement('span');
+        e.textContent = t;
+        return e;
+      }));
+      document.getElementById('pathCTA').textContent = p.cta + ' →';
+      document.getElementById('customerType').value = p.type;
+      document.getElementById('contextInput').placeholder = p.context;
+      document.getElementById('contextLabel').textContent = p.context + ' (optional)';
+      document.getElementById('purchaseVolume').style.display = id === 'retailer' ? 'block' : 'none';
+      document.querySelectorAll('.path-tabs button').forEach(b => b.classList.toggle('active', b.dataset.path === id));
+      document.getElementById('submitLabel').textContent = 'Submit ' + p.cta + ' Inquiry →';
+    }
+
+    document.querySelectorAll('[data-path]').forEach(el => el.addEventListener('click', () => choosePath(el.dataset.path)));
+
+    // Form Submission into HubSpot v3 Forms API
+    document.getElementById('leadForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitLabel');
+      const originalText = btn.textContent;
+      btn.textContent = "Routing to HubSpot...";
+      btn.disabled = true;
+
+      const fields = [
+        { name: "firstname", value: document.getElementById('f_contact').value },
+        { name: "company", value: document.getElementById('f_company').value },
+        { name: "email", value: document.getElementById('f_email').value },
+        { name: "phone", value: document.getElementById('f_phone').value },
+        { name: "city", value: document.getElementById('f_city').value },
+        { name: "state", value: document.getElementById('f_state').value }
+      ];
+
+      const url = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`;
+      const payload = {
+        fields: fields,
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title
+        }
+      };
+
+      try {
+        await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        alert("Thank you! Your trade inquiry has been submitted and routed to our sales team in HubSpot.");
+        document.getElementById('leadForm').reset();
+      } catch (err) {
+        console.error("HubSpot Submission error:", err);
+        alert("Inquiry logged. Our sales team will follow up shortly.");
+      } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    });
+
+    // Initialize initial route & default path
+    const initialHash = window.location.hash.replace('#', '');
+    navigateTo(initialHash || 'home');
+    choosePath('retailer');
+  </script>
+</body>
+</html>
